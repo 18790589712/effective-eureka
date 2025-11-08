@@ -1,0 +1,17 @@
+# 1_hello_image.py
+import cv2
+
+# 读取图片
+img = cv2.imread('test.jpg')
+
+# 检查图片是否成功读取
+if img is None:
+    print("错误：找不到图片 'test.jpg'，请检查文件路径")
+else:
+    # 显示图片
+    cv2.imshow('My First OpenCV Window', img)
+    print("成功！按任意键关闭窗口")
+    
+    # 等待按键后关闭
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

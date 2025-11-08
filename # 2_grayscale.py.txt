@@ -1,0 +1,21 @@
+# 2_grayscale.py
+import cv2
+
+img = cv2.imread('test.jpg')
+if img is None:
+    print("错误：找不到图片 'test.jpg'")
+else:
+    # 转换为灰度图
+    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    # 显示原图和灰度图
+    cv2.imshow('Original Color Image', img)
+    cv2.imshow('Grayscale Image', gray_img)
+    print("显示原图和灰度图，按任意键关闭")
+    
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+    # 保存灰度图
+    cv2.imwrite('grayscale_version.jpg', gray_img)
+    print("灰度图已保存")
